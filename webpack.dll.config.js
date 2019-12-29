@@ -11,7 +11,7 @@ module.exports = {
     polyfills: [
       'zone.js/dist/zone'
     ],
-    vendor: [
+    runtime: [
       "@angular/animations",
       "@angular/common",
       "@angular/core",

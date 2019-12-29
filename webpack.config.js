@@ -15,7 +15,7 @@ module.exports = (config, options) => {
     }),
     new webpack.DllReferencePlugin({
       context: process.cwd(),
-      manifest: require(path.resolve(__dirname, 'dll', 'vendor-manifest.json'))
+      manifest: require(path.resolve(__dirname, 'dll', 'runtime-manifest.json'))
     })
   );
 
@@ -24,7 +24,7 @@ module.exports = (config, options) => {
       path.resolve(__dirname, 'dll', 'polyfills-dll-es5.js')
     ]),
     new CopyWebpackPlugin([
-      path.resolve(__dirname, 'dll', 'vendor-dll-es5.js')
+      path.resolve(__dirname, 'dll', 'runtime-dll-es5.js')
     ])
   );
 

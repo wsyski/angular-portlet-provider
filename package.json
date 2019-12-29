@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:dll": "webpack --config ./webpack.dll.config.js"
+    "build:dll": "webpack --config ./webpack.dll.config.js",
+    "build:liferay": "lnbs-build",
+    "deploy:liferay": "lnbs-deploy"
   },
   "private": true,
   "dependencies": {
@@ -58,5 +60,13 @@
     "webpack-cli": "~3.3.10",
     "webpack-dev-server": "~3.10.1"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "portlet": {
+    "com.liferay.portlet.display-category": "category.sample",
+    "javax.portlet.name": "angularportletprovider",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.resource-bundle": "content.Language",
+    "com.liferay.portlet.instanceable": false,
+    "com.liferay.portlet.header-portlet-css": "/angular-portlet-provider/styles.css"
+  }
 }

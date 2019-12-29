@@ -2,6 +2,19 @@
   "name": "angular-portlet-provider",
   "description": "Angular Portlet Provider",
   "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build",
+    "build:prod": "ng build --prod",
+    "start": "http-server dist/${npm_package_name}",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build:dll": "webpack --config ./webpack.dll.config.js",
+    "build:liferay": "lnbs-build",
+    "deploy:liferay": "npm run build:liferay && lnbs-deploy"
+  },
+  "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
@@ -47,9 +60,5 @@
     "webpack-cli": "~3.3.10",
     "webpack-dev-server": "~3.10.1"
   },
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc -p tsconfig.json && liferay-npm-bundler",
-    "deploy": "npm run build && lnbs-deploy"
-  }
+  "main": "index.js"
 }
